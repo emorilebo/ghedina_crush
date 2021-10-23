@@ -29,11 +29,11 @@ const App = () => {
       const decidedColor = currentColorArrangement[i];
 
       if (
-        columnOfThree.every(
+        columnOfFour.every(
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
-        columnOfThree.forEach(
+        columnOfFour.forEach(
           (square) => (currentColorArrangement[square] = "")
         );
       }
@@ -58,11 +58,13 @@ const App = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
+      checkForColumnOfFour();
       checkForColumnOfThree();
+
       setCurrentColorArrangement([...currentColorArrangement]);
     }, 100);
     return () => clearInterval(timer);
-  }, [checkForColumnOfThree, currentColorArrangement]);
+  }, [checkForColumnOfFour, checkForColumnOfThree, currentColorArrangement]);
   console.log(currentColorArrangement);
 
   return (
