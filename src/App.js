@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const width = 8;
 const candyColors = ["blue", "green", "orange", "purple", "red", "yellow"];
@@ -16,7 +16,9 @@ const App = () => {
     }
     setCurrentColorArrangement(randomColorArrangement);
   };
-  createBoard();
+  useEffect(() => {
+    createBoard();
+  }, []);
   console.log(currentColorArrangement);
 
   return <div>Hello</div>;
