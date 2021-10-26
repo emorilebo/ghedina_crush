@@ -83,7 +83,7 @@ const App = () => {
 
   const moveIntoSquareBelow = () => {
     for (let i = 0; i < 64 - width; i++) {
-      if (currentColorArrangement[i] + width === "") {
+      if (currentColorArrangement[i + width] === "") {
         currentColorArrangement[i + width] = currentColorArrangement[i];
         currentColorArrangement[i] = "";
       }
