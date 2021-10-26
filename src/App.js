@@ -80,7 +80,7 @@ const App = () => {
     const timer = setInterval(() => {
       checkForColumnOfFour();
       checkForColumnOfThree();
-
+      checkForRowOfThree();
       setCurrentColorArrangement([...currentColorArrangement]);
     }, 100);
     return () => clearInterval(timer);
