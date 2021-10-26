@@ -100,7 +100,7 @@ const App = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       checkForColumnOfFour();
-      chechForRowOfFour();
+      checkForRowOfFour();
       checkForColumnOfThree();
       checkForRowOfThree();
       setCurrentColorArrangement([...currentColorArrangement]);
